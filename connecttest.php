@@ -15,12 +15,13 @@ $client->setAffiliateId(RAKUTEN_AFFILIATEID);
 $response = $client->execute(
 	"IchibaItemSearch",
 	array(
-	"keyword" => "トレンチコート"
+		"keyword" => "トレンチコート"
 	)
 );
 
 if ($response->isOk()) {
-	var_dump($response);
+	echo "Success:",  $response["hits"];
+	//var_dump($response);
 } else {
 	echo "Error:".$response->getMessage();
 }
